@@ -52,9 +52,11 @@ function buyIceCream(flavor){
     console.log('bought', flavor)
     let foundFlavor = iceCream.find(iceCream => iceCream.name == flavor)
     console.log(foundFlavor)
+    foundFlavor.quantity++
 }
 
 function buyVessel(coneType){
+    
 
 }
 
