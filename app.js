@@ -131,3 +131,23 @@ function updateTotal() {
     console.log(total, 'total')
     document.getElementById('total').innerText = total.toString()
 }
+
+function reset(){
+    console.log('hiya')
+    iceCream.forEach(iceCream => {
+        if (iceCream.quantity > 0) {
+            iceCream.quantity = 0
+        }
+    })
+    vessels.forEach(vessels => {
+        if (vessels.quantity > 0) {
+            vessels.quantity = 0
+        }
+    })
+    toppings.forEach(toppings => {
+        if (toppings.quantity > 0) {
+            toppings.quantity = 0
+        }
+    })
+    updateCheckout()
+}
