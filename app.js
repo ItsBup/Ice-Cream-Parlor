@@ -56,10 +56,16 @@ function buyIceCream(flavor){
 }
 
 function buyVessel(coneType){
-    
+    console.log('bought', coneType)
+    let foundVessel = vessels.find(vessels => vessels.name == coneType)
+    console.log(foundVessel)
+    foundVessel.quantity++
 
 }
 
 function buyTopping(toppingType){
-
+    console.log('bought', flavor)
+    let foundFlavor = iceCream.find(iceCream => iceCream.name == flavor)
+    console.log(foundFlavor)
+    foundFlavor.quantity++
 }
