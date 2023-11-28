@@ -118,7 +118,16 @@ function updateTotal() {
             total += iceCream.quantity * iceCream.price
         }
     })
-    
+    vessels.forEach(vessels => {
+        if (vessels.quantity > 0) {
+            total += vessels.quantity * vessels.price
+        }
+    })
+    toppings.forEach(toppings => {
+        if (toppings.quantity > 0) {
+            total += toppings.quantity * toppings.price
+        }
+    })
     console.log(total, 'total')
     document.getElementById('total').innerText = total.toString()
 }
