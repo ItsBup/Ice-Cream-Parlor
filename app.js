@@ -16,6 +16,22 @@ const iceCream = [{
     quantity: 0
 }]
 
+const vessels = [{
+    name: 'Waffle Cone',
+    quantity: 0,
+    price: 3
+}, 
+{
+    name: 'Waffle Bowl',
+    price: 4,
+    quantity: 0
+},
+{
+    name: 'Dipped Cone',
+    price: 5,
+    quantity: 0
+}]
+
 const toppings = [{
     name: 'Sprinkles',
     quantity: 0,
