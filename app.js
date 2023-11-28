@@ -47,3 +47,16 @@ const toppings = [{
     price: .5,
     quantity: 0
 }]
+
+function buyIceCream(flavor){
+    console.log('bought', flavor)
+
+}
+
+function buyVessel(coneType){
+
+}
+
+function buyTopping(toppingType){
+
+}
