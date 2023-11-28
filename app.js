@@ -64,8 +64,24 @@ function buyVessel(coneType){
 }
 
 function buyTopping(toppingType){
-    console.log('bought', flavor)
-    let foundFlavor = iceCream.find(iceCream => iceCream.name == flavor)
-    console.log(foundFlavor)
-    foundFlavor.quantity++
+    console.log('bought', toppingType)
+    let foundTopping = toppings.find(toppings => toppings.name == toppingType)
+    console.log(foundTopping)
+    foundTopping.quantity++
+}
+
+function updateCheckout(){
+    let template = ''
+
+    iceCream.forEach(iceCream => {
+        if (iceCream.quantity > 0) {
+            template += ` <div class="d-flex justify-content-between align-items-baseline">
+                <span>${iceCream.name}</span>
+                <span>${iceCream.quantity}</span>
+                <span>${iceCream.price}</span>
+                <span>${total}</span>
+            </div> `
+        }
+    })
+    console.log(template)
 }
