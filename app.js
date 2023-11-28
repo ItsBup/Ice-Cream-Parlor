@@ -3,7 +3,7 @@ console.log('hello there! -Obi-Wan Kenobi')
 const iceCream = [{
     name: 'Cookie Dough',
     price: 1.25,
-    quantity: 0
+    quantity: 0,
 }, 
 {
     name: 'Vanilla',
@@ -79,9 +79,22 @@ function updateCheckout(){
                 <span>${iceCream.name}</span>
                 <span>${iceCream.quantity}</span>
                 <span>${iceCream.price}</span>
-                <span>${total}</span>
+                <span>${iceCream.price*iceCream.quantity}</span>
             </div> `
         }
     })
-    console.log(template)
+
+    document.getElementById('checkout').innerHTML = template
+    updateTotal()
+}
+
+function updateTotal() {
+    let total = 0
+
+    iceCream.forEach(iceCream => {
+        if (iceCream.quantity > 0) {
+            total += iceCream.quantity * iceCream.price
+        }
+    })
+    document.getElementById('total').innerText = total.toString()
 }
