@@ -53,6 +53,7 @@ function buyIceCream(flavor){
     let foundFlavor = iceCream.find(iceCream => iceCream.name == flavor)
     console.log(foundFlavor)
     foundFlavor.quantity++
+    updateCheckout()
 }
 
 function buyVessel(coneType){
@@ -60,7 +61,7 @@ function buyVessel(coneType){
     let foundVessel = vessels.find(vessels => vessels.name == coneType)
     console.log(foundVessel)
     foundVessel.quantity++
-
+    updateCheckout()
 }
 
 function buyTopping(toppingType){
@@ -68,6 +69,7 @@ function buyTopping(toppingType){
     let foundTopping = toppings.find(toppings => toppings.name == toppingType)
     console.log(foundTopping)
     foundTopping.quantity++
+    updateCheckout()
 }
 
 function updateCheckout(){
@@ -80,6 +82,26 @@ function updateCheckout(){
                 <span>${iceCream.quantity}</span>
                 <span>${iceCream.price}</span>
                 <span>${iceCream.price*iceCream.quantity}</span>
+            </div> `
+        }
+    })
+    vessels.forEach(vessels => {
+        if (vessels.quantity > 0) {
+            template += ` <div class="d-flex justify-content-between align-items-baseline">
+                <span>${vessels.name}</span>
+                <span>${vessels.quantity}</span>
+                <span>${vessels.price}</span>
+                <span>${vessels.price*vessels.quantity}</span>
+            </div> `
+        }
+    })
+    toppings.forEach(toppings => {
+        if (toppings.quantity > 0) {
+            template += ` <div class="d-flex justify-content-between align-items-baseline">
+                <span>${toppings.name}</span>
+                <span>${toppings.quantity}</span>
+                <span>${toppings.price}</span>
+                <span>${toppings.price*toppings.quantity}</span>
             </div> `
         }
     })
@@ -96,5 +118,7 @@ function updateTotal() {
             total += iceCream.quantity * iceCream.price
         }
     })
+    
+    console.log(total, 'total')
     document.getElementById('total').innerText = total.toString()
 }
